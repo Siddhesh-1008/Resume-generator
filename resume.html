@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RESUME GENERATOR</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="resume.css">
+</head>
+<body>
+    <!-- CV FORM -->
+    <div class="container" id="cv-form">
+        <!-- TEXT CENTER TO BRING HEADING TO CENTER AND MY-3 REFERS FOR PADDING TOPBOTTOM -->
+        <h1 class="text-center my-3">RESUME GENERATOR</h1>
+        <!-- ENTIRE ROW IS DIVIDED INTO TWO COLUMNS -->
+        <div class="row">
+            <h1 class="text-center">Row</h1>
+            <div class="col-md-6">
+                <!-- FIRST COLUMN -->
+                <h3>PERSONAL INFORMATION</h3>
+
+                <!-- INPUT FIELDS FOR PERSONAL DATA -->
+                 <div class="form-group">
+                    <!-- HEADING OF INPUT FIELD -->
+                    <!-- PLACEHOLDER DISAPPEARS AS U TYPE  -->
+                    <!-- HERE ID REFERS FOR CSS -->
+                    <label for="nameField">YOUR NAME</label>
+                    <input 
+                    type="text" 
+                    id="nameField"
+                    placeholder="ENTER HERE.." 
+                    class="form-control">
+                 </div>
+
+                 <!-- mt-2 REFERS FOR MARGIN TOP -->
+                 <div class="form-group mt-2">
+                    <label for="contactField">YOUR CONTACT</label>
+                    <input 
+                    type="text" 
+                    id="contactField"
+                    placeholder="ENTER HERE.." 
+                    class="form-control">
+                 </div>
+
+                 <div class="form-group mt-2">
+                    <label for="addressField">YOUR ADDRESS</label>
+                    <!-- TEXTAREA FOR TEXTBOX ROW=numberofrows REFERS TO NUMBER OF ROWS INT TEXT-->
+                    <textarea
+                        placeholder="ENTER HERE..."
+                        rowS="2"
+                        id="addressField"
+                        class="form-control"></textarea>
+                 </div>
+
+                 <!--FOR ADDING IMAGE IN RESUME -->
+                 <div class="form-group mt-3">
+                    <label for="">SELCT YOUR PROFILE PICTURE</label>
+                    <input
+                     id="imgField" 
+                     type="file" 
+                     class="form-control"/>
+                 </div>
+
+                 <!-- THIS IS BASIICALY SECOND LOWER PART OF THE COLUMN1 -->
+                 <p class="text-secondary my-3">IMPORTANT LINKS</p>
+                 <div class="form-group">
+                    <!-- ICONS FOR INSTA FACEBOOK LOINKEDIN -->
+                    <a href="https://www.facebook.com/yourprofile" target="_blank" class="social-icon1">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <label for="fbField">FACEBOOK</label>
+                    <input 
+                    type="text" 
+                    id="fbField"
+                    placeholder="ENTER HERE.." 
+                    class="form-control">
+                 </div>
+
+                 <div class="form-group mt-2">
+                    <a href="https://www.instagram.com/yourprofile" target="_blank" class="social-icon2">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <label for="instaField">INSTAGRAM</label>
+                    <input 
+                    type="text" 
+                    id="instaField"
+                    placeholder="ENTER HERE.." 
+                    class="form-control">
+                 </div>
+
+                 <div class="form-group mt-2">
+                    <a href="https://www.linkedin.com/yourprofile" target="_blank" class="social-icon3">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <label for="linkedinField">LINKEDIN</label>
+                    <input 
+                    type="text" 
+                    id="linkedinField"
+                    placeholder="ENTER HERE.." 
+                    class="form-control">
+                 </div>
+                 
+
+ 
+            </div>
+
+
+
+            <div class="col-md-6">
+                 <!-- SECOND COLUMN -->
+                <h3>PROFESSIONAL INFORMATION</h3>
+
+                <div class="form-group mt-2">
+                    <label for="">OBJECTIVES</label>
+                    <!-- TEXTAREA FOR TEXTBOX ROW=numberofrows REFERS TO NUMBER OF ROWS INT TEXT-->
+                    <textarea
+                        id="objectiveField"
+                        placeholder="Enter here"
+                        class="form-control"
+                        rowS="5"
+                        ></textarea>
+                        
+                </div>
+
+                <!-- WORK EXPERIENCE FIELD MUST BE DYNAMIC CAHNGES ACCORDING TO THE USER -->
+                <div class="form-group mt-2" id="we">
+                    <label for="">WORK EXPERIENCE</label>
+                    <!-- TEXTAREA FOR TEXTBOX ROW=numberofrows REFERS TO NUMBER OF ROWS INT TEXT-->
+                    <textarea
+                        rows="3"
+                        placeholder="ENTER HERE..."
+                        class="form-control weField"
+                        ></textarea>
+                        <input type="date" 
+                        class="form-control weField mt-2" 
+                        placeholder="Select date">
+                        
+                     <!-- TEXT AREA WILL BE DYNAMICALLY ADD HERE -->
+
+                    <div class="container text-center mt-3 " id="weAddButton">
+                        <button class="btn btn-primary btn-sm" onclick="addNewWEField()">ADD</button>
+                    </div>
+
+                </div>
+
+                <div class="form-group mt-2" id="aq">
+                    <label for="">ACADEMIC QUALIFICATION</label>
+                    <!-- TEXTAREA FOR TEXTBOX ROW=numberofrows REFERS TO NUMBER OF ROWS IN TEXT 
+                     HERE WE HAD USE CLASS BECAUSE WE CAN ADD DYNAMIC TEXTAREA-->
+                    <textarea
+                        placeholder="ENTER HERE..."
+                        class="form-control eqField"
+                        rows="4"  
+                    ></textarea>
+                    <!-- DYNAMIC TEXTAREA WILL BE GENERATED HERE -->
+                    <div class="container text-center mt-3" id="aqAddButton">
+                        <button onclick="addNewAQField()" class="btn btn-primary btn-sm">ADD</button>
+                    </div>
+                </div>
+
+
+                 
+
+
+                 
+            </div>
+            
+
+
+
+
+        </div>
+
+        <!-- GENERATE CV BUTTON FOR RESUME -->
+        <div class="container  text-center mt-5">
+            <button onclick="generateCV()" class="btn btn-primary btn-lg">GENERATE CV</button>
+        </div>
+
+    </div>
+    
+    <!--CV-TEMPLATE  -->
+    <div class="container" id="cv-template">
+        <!-- ROWS ARE DIVIDED INTO 4 COLUMNS ON LEFT SIDE AND 8 COLUMNS ON RIGHT SIDE -->
+    <div class="row">
+        <!-- FIRST COLUMN FOR TEMPLATE-->
+         <!-- padding from top 5 AND BACKGROUND FOR STYLING -->
+        <div class="col-md-4 text-center py-5 background">
+             <!-- class="img-fluid" HERE IT WILL GET ADJUSTED TO WIDTH OF div class="col-md-4 4COLUMNS
+              AS WELL AS WE ARE ADDING myimg CLASS TO IT FOR STYLING-->
+              <!-- id is used for setting the image to it -->
+             <img 
+             src="https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg"
+              alt="" 
+              class="img-fluid myimg"
+              id="imgTemplate"
+              />
+                <div class="container">
+                    <p  id="nameT1" class="mt-2" >Siddhesh sawant</p>
+                    <p id="contactT">+91-87518155258/91-4545712812</p>
+                    <p id="addressT">xyx,sctor-8,domciv</p>
+                    <hr/>
+                    <p>
+                        <i class="fab fa-facebook" style="padding: 3px 3px; color: blue; font-size: 20px;"></i>
+                        <a id="fbT" href="#1">
+                            https://www.facebook.com/yourprofile
+                        </a>
+                    </p>
+                    <p>
+                        <i class="fab fa-instagram" style="padding: 3px 3px; color:rgb(198, 39, 135); font-size: 20px;"></i>
+                        <a id="instaT" href="#2"  >
+                            https://www.instagram.com/yourprofile
+                        </a>
+                    </p>
+                    <p>
+                        <i class="fab fa-linkedin" style="padding: 3px 3px; color: blue; font-size: 20px;"></i>
+                        <a id="linkedT" href="#3" >
+                            https://www.linkedin.com/yourprofile
+                        </a>
+                    </p>
+                </div>
+
+        </div>
+        <!-- SECOND COLUMN FOR TEMPLATE-->
+        <div class="col-md-8 py-5">
+            <h1 id="nameT2" class="text-center">SIDDHESH SAWANT</h1>
+            <!-- OBJECTIVE CARD -->
+            <div class="card mt-3">
+                <div class="card-header background">
+                    <h3>OBJECTIVE</h3>
+                </div>
+                <div class="card-body py-2 px-3">
+                    <p id="objectiveT">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Fugiat asperiores voluptatem reprehenderit illo harum assumenda ratione blanditiis nisi id.
+                        Quam mollitia vitae earum,
+                        obcaecati amet officia iste ipsam suscipit soluta!
+                    </p>
+                </div>
+            </div>
+
+            <!-- WORK EXPERIENCE CARD -->
+            <div class="card mt-3">
+                <div class="card-header background">
+                    <h3>WORK EXPERIENCE</h3>
+                </div>
+                <div class="card-body py-2">
+                    <ul id="weT">
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.<span class="date">2024-07-14</span></li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.<span class="date">2024-07-14</span></li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.<span class="date">2024-07-14</span></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- EDUCATION QUALIFICATION -->
+            <div class="card mt-3">
+                <div class="card-header background">
+                    <h3>ACADEMIC QUALIFICATION</h3>
+                </div>
+                <div class="card-body py-2">
+                    <ul id="aqT">
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elite.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="container mt-3 text-center">
+                <button  onclick="printCV()" class="btn background">
+                    PRINT CV
+                </button>
+            </div>
+        
+            
+        </div>
+    </div>   
+
+
+
+    </div>
+
+    <script src="resume.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+</body>
+</html>

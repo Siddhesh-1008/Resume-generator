@@ -1,0 +1,103 @@
+body{
+    background-color:pink;
+    /* font-weight:900; */
+}
+
+
+.social-icon1 i {
+    padding:3px 3px;
+    color:blue;
+    font-size: 20px; /* Adjust icon size as needed */
+}
+
+.social-icon2 i {
+    padding:3px 3px;
+    color:rgb(249, 11, 122);
+    font-size: 20px; /* Adjust icon size as needed */
+}
+
+.social-icon3 i {
+    padding:3px 3px;
+    color:rgb(39, 195, 247);
+    font-size: 20px; /* Adjust icon size as needed */
+}
+
+/* #weAddButton :hover{
+    background-color:rgb(105, 31, 70);
+} */
+
+
+#cv-form{
+    /* display: none; */
+}
+
+#cv-template{
+    display: none;
+}
+
+@media print {
+    #cv-form {
+        display: none;
+    }
+    #cv-template {
+        display: block;
+    }
+}
+
+.myimg {
+    border-radius: 50%;
+    width: 230px;
+    height:240px; /* Ensures the image remains a circle */
+}
+
+.background{
+    background-color:burlywood;
+}
+
+/* STYLING FOR CARD DATE FOR WORK EXPERIENCE */
+.card-body {
+    list-style: none;
+    padding: 0;
+}
+.card-body li {
+    position: relative;
+    padding-right: 100px; /* Adjust according to your needs */
+}
+.card-body .date {
+    font-size:13px;
+    position: absolute;
+    right:10px;
+    top:1px;;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .row{
+    background-color:rgb(255, 255, 255)
+}
+
+.col-md-6{
+    background-color: aqua;
+} */
